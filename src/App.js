@@ -99,7 +99,6 @@ const App = () => {
 
 export default App;
 // TODO:
-// výška karet na malých zařízeních se upravuje podle obsahu
 // karty na velkých zařízeních - on hover - ukáže se zbytek + šipka nebo rozostření
 // na malých zař poslední karta nejde vidět (čím menší, tím hůře)
 // info ikona s informacemi
