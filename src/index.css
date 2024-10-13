@@ -1,13 +1,283 @@
+html,
 body {
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  overflow: hidden; /* Zamezí scrollování na hlavní stránce */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  background-color: #fed2c5;
+  height: 100%; /* Nastavit na 100% výšku, ne 100vh */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.app {
+  background-color: #ffffff;
+  width: 70%;
+  height: 90%;
+  border-radius: 42px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  margin: 0;
+  position: relative;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 89%;
+  left: 2.5%;
+  top: 1%;
+  padding-right: 3%;
+  padding-left: 3%;
+}
+
+.avatar {
+  border-radius: 28px;
+}
+
+.message-board {
+  background-color: #f99c71;
+  width: 95%;
+  position: relative;
+  height: 85%;
+  left: 2.5%;
+  border-radius: 42px;
+  top: 2%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  overflow-y: auto; /* Povolit svislý scrollbar */
+  overflow-x: hidden; /* Skrýt vodorovný scrollbar */
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.single-card {
+  background-color: #fcf7f1;
+  margin: 1.65%;
+  border-radius: 10px;
+  width: 30%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.single-card .miniheader {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3%;
+  border-radius: 10px 10px 0px 0px;
+
+}
+.single-card .name {
+  color: #acaba9;
+  margin-top: 4%;
+  margin-bottom: 0%;
+}
+.single-card .date {
+  color: #acaba9;
+  margin-top: 4%;
+  margin-bottom: 0%;
+}
+.single-card .message {
+  color: #433d39;
+  margin: 5% 3% 13% 3%;
+  overflow: hidden;
+  height: 65%;
+  text-align: justify;
+}
+
+.add-message {
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rosybrown;
+  width: 30%;
+  cursor: pointer;
+}
+
+.add-message p {
+  font-size: 400%;
+  font-weight: light;
+}
+.message-form-popup {
+  background-color: #ffffff;
+  z-index: 3;
+  position: fixed;
+  width: 70%;
+  max-width: 700px;
+  height: 20%;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+.message-form-popup input {
+  background-color: #ececec;
+  border: none;
+  border-radius: 6px;
+}
+.message-form-popup button {
+  position: absolute;
+  top: 10%;
+  left: 97%;
+  transform: translate(-100%, -0%);
+  background-color: transparent;
+}
+.message-form-popup .input-name{
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  height: 13%;
+}
+.message-form-popup .input-text{
+  position: absolute;
+  top: 30%;
+  left: 3%;
+  height: 60%;
+  width: 75%;
+}
+.message-form-popup .input-submit{
+  position: absolute;
+  top: 90%;
+  left: 81%;
+  height: 15%;
+  width: 16%;
+  transform: translate(-0%, -100%);
+  cursor: pointer;
+  background-color: #fa9674;
+  border-radius: 12px;
+  color: #ececec;
+}
+.type-area {
+  visibility: hidden;
+}
+
+@media (max-width: 713px) {
+  .app {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  .message-board {
+    background-color: #f99c71;
+    width: 100%;
+    border-radius: 48px 48px 0 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-bottom: 25%;
+    height: auto;
+  }
+
+  .single-card {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: visible;
+    height: auto;
+  }
+  .single-card .miniheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .single-card .name {
+    color: #acaba9;
+    margin-top: 2%;
+  }
+  .single-card .date {
+    color: #acaba9;
+    margin-top: 2%;
+  }
+  .single-card .message {
+    color: #433d39;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2%;
+    background-color: palegreen;
+    overflow: visible;
+    margin-bottom: 3%;
+  }
+  .add-message {
+    display: none;
+  }
+
+  .type-area {
+    width: 100%;
+    height: 15%;
+    background-color: #fcf7f1;
+    position: absolute;
+    top: 85%;
+    left: 0;
+    border-radius: 38px 38px 0 0;
+    visibility: visible;
+  }
+  .message-form {
+    position: absolute;
+    width: 95%;
+    left: 2.5%;
+    height: 80%;
+    top: 10%;
+    border-radius: 38px 38px 0px 0px;
+  }
+  input {
+    background-color: #ececec;
+    border: none;
+    border-radius: 6px;
+  }
+  .input-name {
+    position: absolute;
+    top: 5%;
+    left: 6%;
+    width: 20%;
+    height: 20%;
+  }
+  .input-text {
+    position: absolute;
+    top: 35%;
+    left: 2.5%;
+    height: 55%;
+    width: 70%;
+  }
+  .input-submit {
+    position: absolute;
+    top: 40%;
+    left: 75%;
+    width: 24%;
+    height: 45%;
+    cursor: pointer;
+    background-color: #fa9674;
+    border-radius: 12px;
+    color: #ececec;
+  }
 }
