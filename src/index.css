@@ -58,20 +58,42 @@ header {
   top: 2%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content:flex-start;
+  justify-content: center;
   overflow-y: auto; /* Povolit svislý scrollbar */
   overflow-x: hidden; /* Skrýt vodorovný scrollbar */
+
 }
+.columnOne {
+  width: 32%;
+  height: fit-content;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.columnTwo {
+  width: 32%;
+  height: fit-content;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.columnThree {
+  width: 32%;
+  height: fit-content;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.column-small-devices {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
 .single-card {
   background-color: #fcf7f1;
-  margin: 1.65%;
+  margin: 3%;
   border-radius: 10px;
-  width: 30%;
-  height: 35%;
+  width: 94%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -103,18 +125,18 @@ header {
 }
 
 .add-message {
-  height: 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rosybrown;
-  width: 30%;
+  width: 94%;
   cursor: pointer;
+  height: 60px;
 }
 
 .add-message p {
-  font-size: 400%;
+  font-size: 200%;
   font-weight: light;
 }
 .message-form-popup {
@@ -144,15 +166,18 @@ header {
 .message-form-popup .input-name{
   position: absolute;
   top: 10%;
-  left: 3%;
+  left: 4%;
   height: 13%;
 }
 .message-form-popup .input-text{
   position: absolute;
   top: 30%;
-  left: 3%;
+  left: 4%;
   height: 60%;
   width: 75%;
+  background-color: #ececec;
+  border: none;
+  border-radius: 6px;
 }
 .message-form-popup .input-submit{
   position: absolute;
@@ -169,6 +194,10 @@ header {
 .type-area {
   visibility: hidden;
 }
+.closeButton {
+  cursor: pointer;
+  border: none;
+}
 
 @media (max-width: 713px) {
   .app {
@@ -184,25 +213,42 @@ header {
   }
 
   .message-board {
+    position: absolute;
+    top: 12%;
     background-color: #f99c71;
     width: 100%;
+    height: 88%;
     border-radius: 48px 48px 0 0;
     left: 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    padding-bottom: 25%;
-    height: auto;
   }
-
+  .columnOne {
+    display: none;
+  }
+  .columnTwo {
+    display: none;  }
+  .columnThree {
+    display: none;
+  }
+  .column-small-devices {
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    width: 96%;
+    gap: 1%;
+    height: 81%;
+    justify-content: flex-start;
+    padding-top: 1%;
+    margin-bottom: 2%;
+    overflow:scroll;
+  }
   .single-card {
-    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     overflow: visible;
     height: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
   .single-card .miniheader {
     display: flex;
@@ -267,6 +313,9 @@ header {
     left: 2.5%;
     height: 55%;
     width: 70%;
+    background-color: #ececec;
+    border: none;
+    border-radius: 6px;
   }
   .input-submit {
     position: absolute;
