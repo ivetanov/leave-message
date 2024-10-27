@@ -47,6 +47,13 @@ header {
 .avatar {
   border-radius: 28px;
 }
+::-webkit-scrollbar {
+  display:flow-root;
+  overflow: hidden;
+}
+::-webkit-scrollbar-thumb {
+  background: #f1f1f1;
+}  
 
 .message-board {
   background-color: #f99c71;
@@ -59,7 +66,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  overflow-y: auto; /* Povolit svislý scrollbar */
+  overflow-y: scroll; /* Povolit svislý scrollbar */
   overflow-x: hidden; /* Skrýt vodorovný scrollbar */
 
 }
@@ -82,10 +89,6 @@ header {
   padding-top: 10px;
 }
 .column-small-devices {
-  display: none;
-}
-
-::-webkit-scrollbar {
   display: none;
 }
 .single-card {
@@ -229,6 +232,12 @@ header {
   .columnThree {
     display: none;
   }
+  ::-webkit-scrollbar {
+    display:flow-root;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #f1f1f1;
+  }  
   .column-small-devices {
     position: relative;
     display: flex; 
@@ -240,6 +249,7 @@ header {
     padding-top: 1%;
     margin-bottom: 2%;
     overflow:scroll;
+    overflow-x: hidden;
   }
   .single-card {
     display: flex;
