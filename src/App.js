@@ -136,7 +136,7 @@ const App = () => {
     <div className="app">
       {error && <p>{error}</p>}
       <header>
-        <h2>Leave a message</h2>
+        <h2>Leave message</h2>
         <img className="avatar" src={avatar} alt="authors avatar"></img>
       </header>
       <div className="message-board">
