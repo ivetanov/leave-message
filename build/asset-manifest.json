@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.22be61a7.css",
+    "main.js": "/static/js/main.2e04eef6.js",
+    "static/media/avatar-iveta.png": "/static/media/avatar-iveta.4f59e82acb636ffd9c2f.png",
+    "index.html": "/index.html",
+    "main.22be61a7.css.map": "/static/css/main.22be61a7.css.map",
+    "main.2e04eef6.js.map": "/static/js/main.2e04eef6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22be61a7.css",
+    "static/js/main.2e04eef6.js"
+  ]
+}
