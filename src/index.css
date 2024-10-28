@@ -1,3 +1,13 @@
+:root {
+  --app-blue: #E8F0FE; 
+  --header-green: #3CB371; 
+  --button-green: #DFF7E6; 
+  --text-light: #888888; 
+  --text-normal: #333333; 
+  --card-background: #FFFFFF; 
+  --card-border: #CCCCCC; 
+}
+
 html,
 body {
   height: 100%;
@@ -7,7 +17,7 @@ body {
 }
 
 #root {
-  background-color: #fed2c5;
+  background-color: #F5F5F5;
   height: 100%; /* Nastavit na 100% výšku, ne 100vh */
   display: flex;
   justify-content: center;
@@ -21,13 +31,14 @@ body {
 }
 
 .app {
-  background-color: #ffffff;
+  background-color: #E8F0FE ;
   width: 70%;
   height: 90%;
   border-radius: 42px;
   max-width: 700px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header {
@@ -42,6 +53,7 @@ header {
   top: 1%;
   padding-right: 3%;
   padding-left: 3%;
+  color: #3CB371;
 }
 
 .avatar {
@@ -54,21 +66,24 @@ header {
 ::-webkit-scrollbar-thumb {
   background: #f1f1f1;
 }  
+::-webkit-scrollbar {
+  display: none;
+}
 
 .message-board {
-  background-color: #f99c71;
+  background-color: #E8F0FE ;
   width: 95%;
   position: relative;
   height: 85%;
   left: 2.5%;
-  border-radius: 42px;
   top: 2%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   overflow-y: scroll; /* Povolit svislý scrollbar */
   overflow-x: hidden; /* Skrýt vodorovný scrollbar */
-
+  box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.1), inset 0px -3px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 .columnOne {
   width: 32%;
@@ -92,7 +107,6 @@ header {
   display: none;
 }
 .single-card {
-  background-color: #fcf7f1;
   margin: 3%;
   border-radius: 10px;
   width: 94%;
@@ -101,6 +115,10 @@ header {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  border: 1px solid #CCCCCC;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: -1;
+  box-shadow: inset 3px 6px 16px rgb(255, 255, 255);
 }
 .single-card .miniheader {
   display: flex;
@@ -110,17 +128,19 @@ header {
 
 }
 .single-card .name {
-  color: #acaba9;
+  color: #888888;
+  font-weight: lighter;
   margin-top: 4%;
   margin-bottom: 0%;
 }
 .single-card .date {
-  color: #acaba9;
+  color: #888888;
+  font-weight: lighter;
   margin-top: 4%;
   margin-bottom: 0%;
 }
 .single-card .message {
-  color: #433d39;
+  color: #333333;
   margin: 5% 3% 13% 3%;
   overflow: hidden;
   height: 65%;
@@ -132,18 +152,23 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rosybrown;
+  background-color: #DFF7E6;
   width: 94%;
   cursor: pointer;
   height: 60px;
+  box-shadow: none;
+}
+.add-message:hover {
+  background-color: #c3f7d2;
 }
 
 .add-message p {
   font-size: 200%;
   font-weight: light;
+  color: #888888;
 }
 .message-form-popup {
-  background-color: #ffffff;
+  background-color: #E8F0FE;
   z-index: 3;
   position: fixed;
   width: 70%;
@@ -165,12 +190,15 @@ header {
   left: 97%;
   transform: translate(-100%, -0%);
   background-color: transparent;
+  color: #888888;
 }
 .message-form-popup .input-name{
   position: absolute;
   top: 10%;
   left: 4%;
   height: 13%;
+  outline: none;
+  background-color: var(--card-background);
 }
 .message-form-popup .input-text{
   position: absolute;
@@ -180,7 +208,11 @@ header {
   width: 75%;
   background-color: #ececec;
   border: none;
+  outline: none;
   border-radius: 6px;
+  resize: none;
+  background-color: var(--card-background);
+
 }
 .message-form-popup .input-submit{
   position: absolute;
@@ -190,9 +222,15 @@ header {
   width: 16%;
   transform: translate(-0%, -100%);
   cursor: pointer;
-  background-color: #fa9674;
+  background-color: #3CB371;
   border-radius: 12px;
   color: #ececec;
+  border: 1px solid #CCCCCC;
+}
+.message-form-popup .input-submit:hover{
+  background-color: #c3f7d2;
+  color: #888888;
+
 }
 .type-area {
   visibility: hidden;
@@ -211,17 +249,12 @@ header {
     left: 0;
   }
 
-  h2 {
-    margin: 0;
-  }
-
   .message-board {
     position: absolute;
     top: 12%;
-    background-color: #f99c71;
+    background-color: var(--app-blue);
     width: 100%;
     height: 88%;
-    border-radius: 48px 48px 0 0;
     left: 0;
   }
   .columnOne {
@@ -232,12 +265,6 @@ header {
   .columnThree {
     display: none;
   }
-  ::-webkit-scrollbar {
-    display:flow-root;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #f1f1f1;
-  }  
   .column-small-devices {
     position: relative;
     display: flex; 
@@ -290,12 +317,13 @@ header {
   .type-area {
     width: 100%;
     height: 15%;
-    background-color: #fcf7f1;
+    background-color: var(--card-background);
     position: absolute;
     top: 85%;
     left: 0;
     border-radius: 38px 38px 0 0;
     visibility: visible;
+    z-index: 2;
   }
   .message-form {
     position: absolute;
@@ -304,6 +332,7 @@ header {
     height: 80%;
     top: 10%;
     border-radius: 38px 38px 0px 0px;
+    background-color: var(--card-background);
   }
   input {
     background-color: #ececec;
@@ -316,6 +345,7 @@ header {
     left: 6%;
     width: 20%;
     height: 20%;
+    outline: none;
   }
   .input-text {
     position: absolute;
@@ -326,6 +356,8 @@ header {
     background-color: #ececec;
     border: none;
     border-radius: 6px;
+    resize: none;
+    outline: none;
   }
   .input-submit {
     position: absolute;
@@ -334,8 +366,17 @@ header {
     width: 24%;
     height: 45%;
     cursor: pointer;
-    background-color: #fa9674;
+    background-color: var(--button-green);
+    border-radius: 12px;
+    background-color: #3CB371;
     border-radius: 12px;
     color: #ececec;
+    border: 1px solid #CCCCCC;
   }
+   .input-submit:hover {
+    background-color: #c3f7d2;
+    color: #888888;
+  
+  }
+  
 }

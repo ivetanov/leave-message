@@ -1,9 +1,12 @@
 import globals from "globals";
 import pluginReact from "eslint-plugin-react";
 
-
 export default [
-  {files: ["**/*.{js,mjs,cjs,jsx}"]},
-  {languageOptions: { globals: globals.browser }},
-  pluginReact.configs.flat.recommended,
+  {
+    rules: {
+      "no-unused-vars": "error",
+      "no-undef": "error",
+      parser: "@babel/eslint-parser",
+    },
+  },
 ];
