@@ -1,17 +1,17 @@
 import firebase from "firebase/app";
-import "firebase/firestore"
+import "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAZuMTD1oaXCNQY__QV3nKpopntGfU2PKQ",
-    authDomain: "project-leave-message.firebaseapp.com",
-    projectId: "project-leave-message",
-    storageBucket: "project-leave-message.appspot.com",
-    messagingSenderId: "367275093546",
-    appId: "1:367275093546:web:61fa6cecf9e591a8fc9d53"
-  };
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+};
 
-  firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(firebaseConfig);
 
-  const projectFirestore = firebase.firestore()
+const projectFirestore = firebase.firestore();
 
-  export { projectFirestore }
+export { projectFirestore };
