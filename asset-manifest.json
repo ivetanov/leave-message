@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/leave-message/static/css/main.22be61a7.css",
+    "main.js": "/leave-message/static/js/main.8e23b84e.js",
+    "static/media/avatar-iveta.png": "/leave-message/static/media/avatar-iveta.4f59e82acb636ffd9c2f.png",
+    "index.html": "/leave-message/index.html",
+    "main.22be61a7.css.map": "/leave-message/static/css/main.22be61a7.css.map",
+    "main.8e23b84e.js.map": "/leave-message/static/js/main.8e23b84e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22be61a7.css",
+    "static/js/main.8e23b84e.js"
+  ]
+}
